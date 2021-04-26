@@ -7,11 +7,11 @@ public class Tourist {
     private String emailAddress;
     private String cityOfResidence;
     private String countryOfResidence;
-    private int phoneNumber;
+    private String phoneNumber;
     private String nationalIdNumber;
 
     public Tourist(String firstName, String lastName, int age, String emailAddress, String cityOfResidence,
-                   String countryOfResidence, int phoneNumber, String nationalIdNumber){
+                   String countryOfResidence, String phoneNumber, String nationalIdNumber){
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -57,10 +57,10 @@ public class Tourist {
     public void setCountryOfResidence(String countryOfResidence){
         this.countryOfResidence = countryOfResidence;
     }
-    public int getPhoneNumber(){
+    public String getPhoneNumber(){
         return phoneNumber;
     }
-    public void setPhoneNumber(int phoneNumber){
+    public void setPhoneNumber(String phoneNumber){
         this.phoneNumber = phoneNumber;
     }
     public String getNationalIdNumber(){
