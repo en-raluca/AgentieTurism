@@ -20,7 +20,7 @@ public class DataReader {
         File file = new File(PATH);
 
         if(!file.exists()){
-            System.out.println("Fisierul nu exista, verifica path-ul.");
+            System.out.println("The file doesn't exist, verify the path.");
             return offersList;
         }
         FileReader fileReader = null;
