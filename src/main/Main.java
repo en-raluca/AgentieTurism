@@ -1,14 +1,21 @@
 package main;
 
+import data.DataCreator;
+import data.DataReader;
 import model.Reservation;
+import model.TourismOffer;
+import model.Tourist;
+
+import java.util.List;
 
 public class Main {
     public static void main(String[] args){
-        ////"Reservation ID: " + reservationId + ", Offer ID: " + offerId + ", Reservation Date: " +
-        //        //                reservationDate + ", Is Paid: " + isPaid + ", Final Price: " + finalPrice + ",
-        //        //                Tourist List: " +
-        //        //                touristList;
-        Reservation reservation = new Reservation(1,455, 29/08/2021,
-                true, 500, "Ana,");
+        DataCreator dataCreator = new DataCreator();
+        List<Tourist> touristList = dataCreator.createTouristList();
+        List<Reservation> reservationList = dataCreator.createReservationList();
+
+        DataReader dataReader = new DataReader();
+        List<TourismOffer> tourismOffers = dataReader.readOffersFromFile();
+
     }
 }

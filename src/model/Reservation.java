@@ -1,5 +1,6 @@
 package model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class Reservation {
         this.finalPrice = finalPrice;
         this.touristList = touristList;
     }
+
     public int getReservationId(){
         return reservationId;
     }

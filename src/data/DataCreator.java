@@ -1,8 +1,9 @@
 package data;
 
+import model.Reservation;
 import model.Tourist;
-
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 //creare de ob turisti (list)
@@ -52,5 +53,45 @@ public class DataCreator {
             touristList.add(tourist9);
             touristList.add(tourist10);
             return touristList;
+        }
+
+        public List<Reservation> createReservationList(){
+            List<Tourist> allTouristList = createTouristList();
+
+            List<Tourist> touristList1 = new ArrayList<>();
+            touristList1.add(allTouristList.get(0));
+            touristList1.add(allTouristList.get(1));
+            Date reservationDate1 = new Date();
+            Reservation reservation1 = new Reservation(1, 256, reservationDate1,
+                    true, 350, touristList1);
+
+            List<Tourist> touristList2 = new ArrayList<>();
+            touristList2.add(allTouristList.get(2));
+            touristList2.add(allTouristList.get(3));
+            Date reservationDate2 = new Date();
+            Reservation reservation2 = new Reservation(2, 344, reservationDate2,
+                    true, 400, touristList2);
+
+            List<Tourist> touristList3 = new ArrayList<>();
+            touristList3.add(allTouristList.get(4));
+            touristList3.add(allTouristList.get(5));
+            Date reservationDate3 = new Date();
+            Reservation reservation3 = new Reservation(3, 543, reservationDate3,
+                    true, 700, touristList3);
+
+            List<Tourist> touristList4 = new ArrayList<>();
+            touristList4.add(allTouristList.get(6));
+            touristList4.add(allTouristList.get(7));
+            Date reservationDate4 = new Date();
+            Reservation reservation4 = new Reservation(4, 233, reservationDate4,
+                    true, 2500, touristList4);
+
+            List<Tourist> touristList5 = new ArrayList<>();
+            touristList5.add(allTouristList.get(8));
+            touristList5.add(allTouristList.get(9));
+            Date reservationDate5 = new Date();
+            Reservation reservation5 = new Reservation(5, 122, reservationDate5,
+                    true, 1200, touristList5);
+            return allTouristList;
         }
 }
