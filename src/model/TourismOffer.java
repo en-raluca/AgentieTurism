@@ -82,10 +82,10 @@ public class TourismOffer {
     public void setAccomodationName(String accomodationName){
         this.accomodationName = accomodationName;
     }
-    public AccomodationType getAccomodation(){
+    public AccomodationType getAccomodationType(){
         return accomodationType;
     }
-    public void setAccomodation(AccomodationType accomodationType){
+    public void setAccomodationType(AccomodationType accomodationType){
         this.accomodationType = accomodationType;
     }
     @Override
@@ -107,6 +107,6 @@ public class TourismOffer {
         return "Offer ID: " + offerId + ", Type: " + type + ", Destination City: " + destinationCity +
                 ", Departure Date: " + departureDate + ", Arrival Date: " + arrivalDate + ", Price Per Person: " +
                 pricePerPerson + ", Availability: " + isAvailable + ", Accomodation Address: " + accomodationAddress +
-                ", Accomodation Name: " + accomodationName + ", Accomodation: " + accomodationType;
+                ", Accomodation Name: " + accomodationName + ", Accomodation: " + accomodationType + "\n";
     }
 }

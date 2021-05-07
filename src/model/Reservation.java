@@ -76,6 +76,6 @@ public class Reservation {
     public String toString(){
         return "Reservation ID: " + reservationId + ", Offer ID: " + offerId + ", Reservation Date: " +
                 reservationDate + ", Is Paid: " + isPaid + ", Final Price: " + finalPrice + ", Tourist List: " +
-                touristList;
+                touristList + "\n";
     }
 }

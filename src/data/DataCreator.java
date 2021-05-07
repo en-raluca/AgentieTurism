@@ -92,6 +92,12 @@ public class DataCreator {
             Date reservationDate5 = new Date();
             Reservation reservation5 = new Reservation(5, 122, reservationDate5,
                     true, 1200, touristList5);
-            return allTouristList;
+            List<Reservation> reservationList = new ArrayList<>();
+            reservationList.add(reservation1);
+            reservationList.add(reservation2);
+            reservationList.add(reservation3);
+            reservationList.add(reservation4);
+            reservationList.add(reservation5);
+            return reservationList;
         }
 }

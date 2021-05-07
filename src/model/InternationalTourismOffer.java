@@ -40,7 +40,7 @@ public class InternationalTourismOffer extends TourismOffer implements Discounta
             return "Offer ID: " + getOfferId() + ", Type: " + getType() + ", Destination City: " + getDestinationCity() +
                     ", Departure Date: " + getDepartureDate() + ", Arrival Date: " + getArrivalDate() + ", Price Per Person: " +
                     getPricePerPerson() + ", Availability: " + getIsAvailable() + ", Accomodation Address: " + getAccomodationAddress() +
-                    ", Accomodation Name: " + getAccomodationName() + ", Accomodation: " + getAccomodation() + ", Transport Type: " +
+                    ", Accomodation Name: " + getAccomodationName() + ", Accomodation: " + getAccomodationType() + ", Transport Type: " +
                     transportType + ", Departure City: " + departureCity + ", Transport Cost: " + transportCost;
         }
         @Override

@@ -87,6 +87,6 @@ public class Tourist {
     public String toString(){
         return "National Id Number: " + nationalIdNumber + "First Name: " + firstName + ", Last Name: " + lastName + ", Age: " + age + ", Email Address: " +
                 emailAddress + ", City of Residence: " + cityOfResidence + ", Country of Residence: " +
-                countryOfResidence + ", Phone Number: " + phoneNumber;
+                countryOfResidence + ", Phone Number: " + phoneNumber + "\n";
     }
 }
