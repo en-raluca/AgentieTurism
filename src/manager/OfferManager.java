@@ -2,29 +2,46 @@ package manager;
 
 import model.*;
 
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDateTime;
+import java.util.*;
 
 public class OfferManager {
-    /*public void updateTouristicOffer(List<TourismOffer> tourismOfferList, int offerId, Date departureDate,
-                                     double pricePerPerson, boolean isAvailable, double transportCost,
-                                     List<Tourist> touristList, String nationalIdNumber,
-                                     String emailAddress){
-            for(TourismOffer toff: tourismOfferList){
-                if(toff.getOfferId() == offerId){
-                    toff.setDepartureDate(departureDate);
-                    toff.setPricePerPerson(pricePerPerson);
-                    toff.setIsAvailable(isAvailable);
-                    toff.
-                }
-                for(Tourist t: touristList){
-                    if(t.getNationalIdNumber() == nationalIdNumber){
-                        t.setEmailAddress(emailAddress);
-                    }
+    public void updateDepartureDateOfOfferById(List<TourismOffer> offerList, int offerID,
+                                                    Date departureDate){
+        for(TourismOffer t: offerList){
+            if(t.getOfferId() == offerID){
+                t.setDepartureDate(departureDate);
+            }
+        }
+    }
+    public void updatePricePerPersonByOfferId(List<TourismOffer> offerList, int offerId, double
+            pricePerPerson){
+        for(TourismOffer t: offerList){
+            if(t.getOfferId() == offerId){
+                t.setPricePerPerson(pricePerPerson);
+            }
+        }
+    }
+    public void updateAvailabilityOfOfferById(List<TourismOffer> offerList, int offerId, boolean
+                                                   isAvailable){
+        for(TourismOffer t: offerList){
+            if(t.getOfferId() == offerId){
+                t.setIsAvailable(isAvailable);
+            }
+        }
+    }
+    public void updateTransportCostOfOfferById(List<TourismOffer> offerList, int offerId,
+                                                    double transportCost){
+        for(TourismOffer t: offerList){
+            if(t.getOfferId() == offerId){
+                if(t instanceof InternationalTourismOffer){
+                    InternationalTourismOffer internationalTourismOffer = (InternationalTourismOffer) t;
+                    internationalTourismOffer.setTransportCost(transportCost);
                 }
             }
-    } */
-    public void updateAccomodationType(List<TourismOffer> offerList, int offerId, AccomodationType
+        }
+    }
+    public void updateAccomodationTypeOfOfferById(List<TourismOffer> offerList, int offerId, AccomodationType
                                        accomodationType){
         for(TourismOffer t: offerList){
             if(t.getOfferId() == offerId){
@@ -63,7 +80,65 @@ public class OfferManager {
         }
         return touristicOfferByDate;
     }
+    public List<TourismOffer> filterOffersByTransportationType(List<TourismOffer> offerList, TransportType
+                                                               transportType){
+        List<TourismOffer> resultTourismOfferList = new ArrayList<>();
+        for(TourismOffer t: offerList){
+            if(t instanceof InternationalTourismOffer){
+                InternationalTourismOffer internationalTourismOffer = (InternationalTourismOffer) t;
+                internationalTourismOffer.setTransportType(transportType);
+                resultTourismOfferList.add(t);
+            }
+        }
+        return resultTourismOfferList;
+    }
 
+    public List<TourismOffer> filterOffersByType(List<TourismOffer> offerList, Type type){
+        List<TourismOffer> resultTourismOfferList = new ArrayList<>();
+        for(TourismOffer t: offerList){
+            if(t.getType() == type){
+                resultTourismOfferList.add(t);
+            }
+        }
+        return resultTourismOfferList;
+    }
+    public List<TourismOffer> filterOffersByAccomodationType(List<TourismOffer> offerList,
+                                                             AccomodationType accomodationType){
+        List<TourismOffer> resultTourismOfferList = new ArrayList<>();
+        for(TourismOffer t: offerList){
+            if(t.getAccomodationType() == accomodationType){
+                resultTourismOfferList.add(t);
+            }
+        }
+        return resultTourismOfferList;
+    }
+    public List<TourismOffer> filterOffersByFutureDepartureDate(List<TourismOffer> offerList){
+        List<TourismOffer> resultTourismOfferList = new ArrayList<>();
+        Date currentDate = new Date();
+        for(TourismOffer t: offerList){
+            if(t.getDepartureDate().after(currentDate)){
+                resultTourismOfferList.add(t);
+            }
+        }
+        return resultTourismOfferList;
+    }
+    public List<TourismOffer> filterOffersByAvailability(List<TourismOffer> offerList, boolean isAvailable){
+        List<TourismOffer> resultTourismOfferList = new ArrayList<>();
+        for(TourismOffer t: offerList){
+            if(t.getIsAvailable() == isAvailable){
+                resultTourismOfferList.add(t);
+            }
+        }
+        return resultTourismOfferList;
+    }
+
+    //un Map cu rez cheie destinationCity si valoarea nr de oferte disponibile
+    //extrag setul de orase
+    //parcurg setul de orase
+    //imi declar un counter (un numar rezultat initializat cu 0)
+    //parcurg lista de oferte
+    //daca coincide orasul cu orasul din oferta atunci intram in if si verificam availability
+    //daca este available atunci counter++
 
 
     ////UPDATE -> METODA VOID IN CARE MODIFICAM CEVA LA UN OBIECT -> APELAM MET setter

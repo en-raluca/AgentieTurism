@@ -41,13 +41,13 @@ public class GenerateReservation {
                 bw.write("Your reservation was created successfully in " +
                         reservation.getReservationDate());
                 bw.newLine();
-                bw.write("having the reservation ID " + reservation.getReservationId());
+                bw.write("ID number: " + reservation.getReservationId());
                 bw.newLine();
-                bw.write("and the offer ID " + reservation.getOfferId());
+                bw.write("Offer ID " + reservation.getOfferId());
                 bw.newLine();
                 bw.write("The payment of the reservation was successfully: " + reservation.getIsPaid());
                 bw.newLine();
-                bw.write("and the final price is: " + reservation.getFinalPrice());
+                bw.write("The final price is: " + reservation.getFinalPrice());
                 bw.newLine();
                 for(Tourist t : touristList){
                     bw.write("First name of the tourist: " + t.getFirstName());
