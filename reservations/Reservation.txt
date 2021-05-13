@@ -1,8 +1,8 @@
-Your reservation was created successfully in Fri May 07 21:39:18 EEST 2021
-having the reservation ID 1
-and the offer ID 256
+Your reservation was created successfully in Wed May 12 21:12:05 EEST 2021
+ID number: 1
+Offer ID 256
 The payment of the reservation was successfully: true
-and the final price is: 350.0
+The final price is: 350.0
 First name of the tourist: Ana
 Last name of the tourist: Pop
 Age of the tourist: 32
