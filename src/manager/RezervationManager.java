@@ -125,8 +125,8 @@ public class RezervationManager {
 
         }
         return resultMap;
-
     }
+
 }
     //un Map cu rezultatul cheie DestinationCity si valoarea nr de rezervari
     //fac un for pe ofertele turistice pentru a obtine un set cu orasele

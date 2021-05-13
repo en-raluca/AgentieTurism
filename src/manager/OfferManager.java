@@ -140,6 +140,53 @@ public class OfferManager {
     //daca coincide orasul cu orasul din oferta atunci intram in if si verificam availability
     //daca este available atunci counter++
 
+    public Map<String, List<TourismOffer>> extractListOfAvailableOffersByDestCity(List<TourismOffer> offerList){
+        Map<String, List<TourismOffer>> resultMap = new HashMap<>();
+        Set<String> destinationCitySet = new HashSet<>();
+        for(TourismOffer t: offerList){
+            destinationCitySet.add(t.getDestinationCity());
+        }
+        for (String destinationCity : destinationCitySet) {
+            for(TourismOffer to: offerList){
+                if(to.getDestinationCity().equals(destinationCity)){
+                    if(to.getIsAvailable() == true){
+                        if(resultMap.containsKey(destinationCity)){
+                            List<TourismOffer> newOfferList = resultMap.get(destinationCity);
+                            newOfferList.add(to);
+                        }
+                        else{
+                            List<TourismOffer> newOffersList = new ArrayList<>();
+                            newOffersList.add(to);
+                            resultMap.put(destinationCity, newOffersList);
+                        }
+                    }
+                }
+            }
+        }
+        return resultMap;
+
+    }
+    public void addOfferIdToList(List<TourismOffer> offerList, TourismOffer newOffer){
+        offerList.add(newOffer);
+    }
+
+    public void removeOfferIdFromList(List<TourismOffer> offerList, int offerIdToBeRemoved){
+        for(TourismOffer t: offerList){
+            if(t.getOfferId() == offerIdToBeRemoved){
+                offerList.remove(offerIdToBeRemoved);
+            }
+        }
+    }
+    public void removeTypeFromOfferList(List<TourismOffer> offerList, Type typeToBeDeleted){
+        Iterator<TourismOffer> iterator = offerList.iterator();
+        while(iterator.hasNext()){
+            TourismOffer type = iterator.next();
+            if(type.getOfferId() == typeToBeDeleted.getId()){
+                offerList.remove(type);
+            }
+        }
+    }
+
 
     ////UPDATE -> METODA VOID IN CARE MODIFICAM CEVA LA UN OBIECT -> APELAM MET setter
     //    //
