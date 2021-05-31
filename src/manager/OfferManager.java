@@ -171,18 +171,21 @@ public class OfferManager {
     }
 
     public void removeOfferIdFromList(List<TourismOffer> offerList, int offerIdToBeRemoved){
-        for(TourismOffer t: offerList){
-            if(t.getOfferId() == offerIdToBeRemoved){
-                offerList.remove(offerIdToBeRemoved);
+        Iterator<TourismOffer> iterator = offerList.iterator();
+        while(iterator.hasNext()){
+            TourismOffer offerId = iterator.next();
+            if(offerId.getOfferId() == offerIdToBeRemoved){
+                offerList.remove(offerId);
+                break;
             }
         }
     }
     public void removeTypeFromOfferList(List<TourismOffer> offerList, Type typeToBeDeleted){
         Iterator<TourismOffer> iterator = offerList.iterator();
         while(iterator.hasNext()){
-            TourismOffer type = iterator.next();
-            if(type.getOfferId() == typeToBeDeleted.getId()){
-                offerList.remove(type);
+            TourismOffer offer = iterator.next();
+            if(offer.getType().equals(typeToBeDeleted)){
+                offerList.remove(offer);
             }
         }
     }

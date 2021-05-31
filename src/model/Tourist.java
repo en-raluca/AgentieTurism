@@ -82,6 +82,7 @@ public class Tourist {
             return true;
         }
         else return false;
+        //return this.nationalIdNumber.equals(tourist.getNationalIdNumber());
     }
     @Override
     public String toString(){

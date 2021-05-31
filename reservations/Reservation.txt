@@ -1,4 +1,4 @@
-Your reservation was created successfully in Wed May 12 21:12:05 EEST 2021
+Your reservation was created successfully in Mon May 31 15:05:01 EEST 2021
 ID number: 1
 Offer ID 256
 The payment of the reservation was successfully: true

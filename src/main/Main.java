@@ -12,8 +12,6 @@ import model.Tourist;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.Month;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -104,8 +102,8 @@ public class Main {
                 340, true, "Malaga street", "Malaga Hotel", HOTEL);
         offerManager.addOfferIdToList(tourismOffers, offer1);
         System.out.println();
-        //offerManager.removeOfferIdFromList(tourismOffers, 4);
-        //System.out.println();
+        offerManager.removeOfferIdFromList(tourismOffers, 4);
+        System.out.println();
         //offerManager.removeTypeFromOfferList(tourismOffers, MOUNTAIN);
         //System.out.println();
 
@@ -142,7 +140,7 @@ public class Main {
         TouristManager touristManager = new TouristManager();
         touristManager.updateEmailOfTouristByIdNumber(touristList, "2880928124778", "johnsnow@yahoo.com");
         System.out.println();
-        touristManager.findTouristByNationalID(touristList, "1820912125776");
+        touristManager.findTouristByNationalID(touristList, "2860318124998");
         System.out.println();
         touristManager.findTouristByCountry(touristList, "Romania");
         System.out.println();
