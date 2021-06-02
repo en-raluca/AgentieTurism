@@ -2,7 +2,6 @@ package manager;
 
 import model.*;
 
-import java.time.LocalDateTime;
 import java.util.*;
 
 public class OfferManager {
@@ -131,15 +130,6 @@ public class OfferManager {
         }
         return resultTourismOfferList;
     }
-
-    //un Map cu rez cheie destinationCity si valoarea nr de oferte disponibile
-    //extrag setul de orase
-    //parcurg setul de orase
-    //imi declar un counter (un numar rezultat initializat cu 0)
-    //parcurg lista de oferte
-    //daca coincide orasul cu orasul din oferta atunci intram in if si verificam availability
-    //daca este available atunci counter++
-
     public Map<String, List<TourismOffer>> extractListOfAvailableOffersByDestCity(List<TourismOffer> offerList){
         Map<String, List<TourismOffer>> resultMap = new HashMap<>();
         Set<String> destinationCitySet = new HashSet<>();
@@ -180,78 +170,4 @@ public class OfferManager {
             }
         }
     }
-    public void removeTypeFromOfferList(List<TourismOffer> offerList, Type typeToBeDeleted){
-        Iterator<TourismOffer> iterator = offerList.iterator();
-        while(iterator.hasNext()){
-            TourismOffer offer = iterator.next();
-            if(offer.getType().equals(typeToBeDeleted)){
-                offerList.remove(offer);
-            }
-        }
-    }
-
-
-    ////UPDATE -> METODA VOID IN CARE MODIFICAM CEVA LA UN OBIECT -> APELAM MET setter
-    //    //
-    //    //void updateDateOfFlight (List<Flight> flifhtLost, int flightId, Date date){
-    //    //for (Flight f : flightList){
-    //    //if (f.getXXXXX() == flightId){
-    //    //f.setXXXXX(date);
-    //    //}
-    //    //
-    //    //
-    //    //}
-    //    //
-    //    //
-    //    //
-    //    //}
-    //    //void updateColorOfProdus(List<Produs> producyList, int prodId, Color color){
-    //    //
-    //    //}
-    //    //
-    //    //
-    //    //FIND -> METODA CARE RETURNEAZA UN OBIECT CAUTAT (null daca nu gaseste)
-    //    //Car findCarWithNrUsi(List<Car> carList, int nrUsi){
-    //    //Car car = null; //intializez rez cu null indiferent c obiuect aveti in rezultat
-    //    //for (Car c : carList){
-    //    //if (c.getNrUsi() == nrUsi){
-    //    //car = c;
-    //    //}
-    //    //
-    //    //
-    //    //}
-    //    //
-    //    //return car;
-    //    //}
-    //    //
-    //    //
-    //    //SEARCH -> METODA CARE RETURNEAZA UN BOOLEAN (true sau false, daca a gasit sau nu obiectul cautat)
-    //    //boolean searchCarWithNrUsi(List<Car> carList, int nrUsi, int nrLocuri)
-    //    //boolean found = false; //intializez rez cu false
-    //    //for (Car c : carList){
-    //    //if (c.getNrUsi() == nrUsi){
-    //    //found = true; //am gasit obiectul cautat
-    //    //}
-    //    //
-    //    //
-    //    //}
-    //    //
-    //    //return found;
-    //    //boolean searchCarWithColor(List<Car> carList, String color)
-    //    //
-    //    //
-    //    //FILTER -> METODA CARE ARE PARAM LISTA TUTUROR OBIECTELOR, SI RETURNEAZA O LISTA MICUTA CU OBIECTE CARE INDEPLINESC O CONDITIE (BAZATA PE UN PARAMETRU)
-    //    //List<Offer> filterOfferteleByPrice(List<Offer> offerList, int minPrice, int maxPrice ){
-    //    //List<Offer> resultList = new ArrayList(); // tot timpu la toate metodele ilter creati o lista emopty
-    //    //for (Car c : carList){
-    //    //if (c.getNrUsi() == nrUsi && c.getLocuti = nrlocuri){
-    //    //resultList.add(c); // adaug in lista rewz obiectul
-    //    //}
-    //    //
-    //    //return resultLis;
-    //    //
-    //    //}
-    //    //
-    //    //List<Produs> filterProdByPrice(List<Produs> prodList, int minPrice )
-    //    //filterCarsByColor(List<Car> carList, String color ){
 }

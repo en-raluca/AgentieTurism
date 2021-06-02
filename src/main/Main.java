@@ -104,8 +104,6 @@ public class Main {
         System.out.println();
         offerManager.removeOfferIdFromList(tourismOffers, 4);
         System.out.println();
-        //offerManager.removeTypeFromOfferList(tourismOffers, MOUNTAIN);
-        //System.out.println();
 
         RezervationManager rezervationManager = new RezervationManager();
         rezervationManager.updateIsPaidRezervation(reservationList, 344, true);
